@@ -11,4 +11,3 @@ free | awk 'NR==2{printf "総容量: %dMB\n使用量: %dMB\n空き容量: %dMB\n
 # 使用中のポート番号を表示
 echo "【使用中のポート番号】"
 netstat -an | grep -E "^tcp.*LISTEN" | awk '{print $4}' | awk -F':' '{print $NF}' | sort -n | uniq
-
